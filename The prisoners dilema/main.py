@@ -1,3 +1,4 @@
+import random
 import os
 import importlib
 import pathlib
@@ -50,6 +51,8 @@ def resultsToText(reslts, tltstr):
             for w, z in x.items():
                 if c == 1 or c == 2:
                     stri += str(w) + ": " + str(z) + " -- "
+                    if c == 1:
+                        amtWon += z
                 elif c == 3:
                     stri += str(z)
                 c += 1
@@ -58,6 +61,8 @@ def resultsToText(reslts, tltstr):
         
 
 def calculateResults(des1, des2): #passing 0 is cooperate and 1 is confess
+    if des1 > 1: des1 = random.randint(0,1)
+    if des2 > 1: des2 = random.randint(0,1)
     if des1 == 1:
         if des1 == des2:
             return pointDistribution["2Confess"], pointDistribution["2Confess"]
