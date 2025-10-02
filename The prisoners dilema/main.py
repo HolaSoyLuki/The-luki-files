@@ -18,7 +18,7 @@ pointDistribution = {
 totalString = "RESULTS:\n"
 
 for name in os.listdir():
-    if name != os.path.basename(__file__) and name != "Results" and name != "__pycache__":
+    if name != os.path.basename(__file__) and name != "Results" and name != "__pycache__" and name != "README.txt":
         prisoners.append(name)
 
 def resetT():
@@ -57,6 +57,7 @@ def resultsToText(reslts, tltstr):
                     stri += str(z)
                 c += 1
         tltstr = write(stri, tltstr)
+        tltstr = write("\n\n" + str(amtWon), tltstr)
     return tltstr
         
 
@@ -139,3 +140,4 @@ file_path = os.path.join(dir_path, file_name)
 
 with open(file_path, "x") as resultF:
     resultF.write(totalString)
+
