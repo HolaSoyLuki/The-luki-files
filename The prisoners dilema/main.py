@@ -140,4 +140,3 @@ file_path = os.path.join(dir_path, file_name)
 
 with open(file_path, "x") as resultF:
     resultF.write(totalString)
-
